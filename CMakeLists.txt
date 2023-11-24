@@ -17,11 +17,16 @@ find_package(catkin
              roscpp
              costmap_2d
              dynamic_reconfigure
-             custom_msgs
+             message_generation
+             geometry_msgs
              tf)
 
 # ##############################################################################
 # Generate messages and configurations
+
+add_message_files(FILES Form.msg Obstacles.msg Zone.msg)
+generate_messages(DEPENDENCIES geometry_msgs)
+
 generate_dynamic_reconfigure_options(cfg/VirtualLayer.cfg)
 
 # ##############################################################################
@@ -33,7 +38,7 @@ catkin_package(INCLUDE_DIRS
                CATKIN_DEPENDS
                costmap_2d
                dynamic_reconfigure
-               custom_msgs
+               geometry_msgs
                tf
                DEPENDS)
 

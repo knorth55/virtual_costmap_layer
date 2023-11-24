@@ -19,8 +19,8 @@
 #include <geometry_msgs/Point.h>
 #include <ros/ros.h>
 
-#include <custom_msgs/Obstacles.h>
-#include <custom_msgs/Zone.h>
+#include <virtual_costmap_layer/Obstacles.h>
+#include <virtual_costmap_layer/Zone.h>
 
 // #include <geometry_msgs/PoseStamped.h>
 
@@ -113,10 +113,10 @@ private:
     void convert(const XmlRpc::XmlRpcValue &val, geometry_msgs::Point &point);
 
     /// \brief zone callback function
-    void zoneCallback(const custom_msgs::ZoneConstPtr &msg);
+    void zoneCallback(const virtual_costmap_layer::ZoneConstPtr &msg);
 
     /// \brief obstacle callback function
-    void obstaclesCallback(const custom_msgs::ObstaclesConstPtr &obstacles_msg);
+    void obstaclesCallback(const virtual_costmap_layer::ObstaclesConstPtr &obstacles_msg);
 
     /// \brief                checks if the robot point is in the polygon defining the zone
     /// \note                 works only for one zone otherwise returns true

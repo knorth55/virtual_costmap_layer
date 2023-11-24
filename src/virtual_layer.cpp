@@ -484,7 +484,7 @@ void VirtualLayer::rasterizePolygon(const std::vector<PointInt> &polygon, std::v
     }
 }
 
-void VirtualLayer::zoneCallback(const custom_msgs::ZoneConstPtr &zone_msg)
+void VirtualLayer::zoneCallback(const virtual_costmap_layer::ZoneConstPtr &zone_msg)
 {
     if (zone_msg->area.form.size() > 2) {
         Polygon vector_to_add;
@@ -508,7 +508,7 @@ void VirtualLayer::zoneCallback(const custom_msgs::ZoneConstPtr &zone_msg)
     }
 }
 
-void VirtualLayer::obstaclesCallback(const custom_msgs::ObstaclesConstPtr &obstacles_msg)
+void VirtualLayer::obstaclesCallback(const virtual_costmap_layer::ObstaclesConstPtr &obstacles_msg)
 {
     if (_clear_obstacles) {
         _obstacle_polygons.clear();
